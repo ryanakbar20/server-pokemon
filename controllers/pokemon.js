@@ -19,7 +19,6 @@ module.exports = {
       const { idPokemon, name, imageUrl, url } = req.body;
 
       const pokemon = await Pokemon.create({ idPokemon, name, imageUrl, url });
-
       res.status(200).json({ pokemon });
     } catch (error) {
       console.log(error.message);
@@ -34,7 +33,19 @@ module.exports = {
       const pokemon = await Pokemon.findOne({ idPokemon });
       pokemon.name = name;
       await pokemon.save();
+      res.status(200).json({ pokemon });
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).json("Error Internal Server");
+    }
+  },
 
+  deletePokemon: async (req, res) => {
+    try {
+      const { id } = req.params;
+
+      const pokemon = await Pokemon.findOne({ idPokemon: id });
+      await pokemon.remove();
       res.status(200).json({ pokemon });
     } catch (error) {
       console.log(error.message);
