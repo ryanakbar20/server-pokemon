@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://ryanakbar20:aa@cluster0.p5zqo.mongodb.net/pokemon-db?retryWrites=true&w=majority"
+    "mongodb+srv://ryanakbar20:Pitathaeng123@cluster0.p5zqo.mongodb.net/pokemon-db?retryWrites=true&w=majority"
     // "mongodb://localhost:27017"
     // "mongodb+srv://ryanakbar:<password>@cluster0.7ontv.gcp.mongodb.net"
   )
